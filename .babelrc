@@ -1,0 +1,14 @@
+{
+  "presets": ["react-app"],
+  "plugins": [
+    "react-hot-loader/babel",
+    [
+      "react-intl",
+      {
+        "messagesDir": "src/translations/extracted-messages",
+        "enforceDescriptions": false
+      }
+    ],
+    "styled-components"
+  ]
+}
