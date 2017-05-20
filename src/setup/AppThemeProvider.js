@@ -1,10 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { ThemeProvider } from 'styled-components';
+import { injectGlobal, ThemeProvider } from 'styled-components';
 
-// import appTheme from 'identity/theme';
+import theme from 'style/theme';
+
+function injectGlobalStyles(theme) {
+  return injectGlobal`${theme.globalStyles}`;
+}
 
 function AppThemeProvider({ appTheme, children }) {
+  injectGlobalStyles(appTheme);
   return (
     <ThemeProvider theme={appTheme}>
       {children}
@@ -18,7 +23,7 @@ AppThemeProvider.propTypes = {
 };
 
 AppThemeProvider.defaultProps = {
-  appTheme: {},
+  appTheme: theme,
 };
 
 export default AppThemeProvider;

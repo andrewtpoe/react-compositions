@@ -2,10 +2,11 @@ import 'react-hot-loader/patch';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { AppContainer } from 'react-hot-loader';
+import 'normalize.css/normalize.css';
 
 import Root from 'setup/Root';
+
 import registerServiceWorker from './registerServiceWorker';
-import './index.css';
 
 const root = document.getElementById('root');
 

@@ -1,12 +1,14 @@
 {
-  "name": "test",
+  "name": "pwa-template",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "normalize.css": "^7.0.0",
     "prop-types": "^15.5.10",
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
     "react-intl": "^2.3.0",
+    "react-markdown": "^2.5.0",
     "react-router-dom": "^4.1.1",
     "styled-components": "next"
   },
@@ -23,11 +25,12 @@
   },
   "scripts": {
     "build": "npm run translate && cross-env NODE_PATH=src/ react-scripts build",
+    "build:clean": "rimraf ./build",
     "eject": "react-scripts eject",
-    "start": "cross-env NODE_PATH=src/ react-scripts start",
+    "start": "cross-env NODE_PATH=src react-scripts start",
     "test": "react-scripts test --env=jsdom",
     "translate": "npm run translations:clean && npm run translations:extract && npm run translations:generate",
-    "translations:clean": "rimraf ./src/translations/extracted-messages",
+    "translations:clean": "rimraf ./src/translations/extracted-messages && rimraf ./src/translations/en.json",
     "translations:extract": "cross-env NODE_ENV=production babel ./src >/dev/null",
     "translations:generate": "cross-env NODE_ENV=production babel-node scripts/translationRunner.js"
   }

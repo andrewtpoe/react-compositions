@@ -9,6 +9,11 @@
         "enforceDescriptions": false
       }
     ],
-    "styled-components"
+    [
+      "styled-components",
+      {
+        "displayName": true,
+      }
+    ]
   ]
 }
