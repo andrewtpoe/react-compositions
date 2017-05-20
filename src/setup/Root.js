@@ -8,9 +8,7 @@ function Root() {
   return (
     <AppThemeProvider>
       <I18n>
-        <section id="root-component">
-          <Router />
-        </section>
+        <Router />
       </I18n>
     </AppThemeProvider>
   );

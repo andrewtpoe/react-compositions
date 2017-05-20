@@ -4,12 +4,13 @@ import { injectGlobal, ThemeProvider } from 'styled-components';
 
 import theme from 'style/theme';
 
-function injectGlobalStyles(theme) {
-  return injectGlobal`${theme.globalStyles}`;
-}
-
 function AppThemeProvider({ appTheme, children }) {
+  function injectGlobalStyles(theme) {
+    return injectGlobal`${theme.globalStyles}`;
+  }
+
   injectGlobalStyles(appTheme);
+
   return (
     <ThemeProvider theme={appTheme}>
       {children}
