@@ -11,7 +11,6 @@ function AppThemeProvider({ appTheme, children }) {
 
   injectGlobalStyles(appTheme);
 
-  console.log(appTheme);
   return (
     <ThemeProvider theme={appTheme}>
       {children}
