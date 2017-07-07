@@ -3,10 +3,10 @@
 This project is an enhanced template built on top of Create React App, a wonderful progressive web app generator. This template adds several things that `create-react-app` leaves out, namely:
 
   - hot reloading
-  - client side routing
-  - styled-components
   - normalize.css
+  - styled-components
   - internationalization
+  - client side routing
   - ...more to come?
 
 One of the major design goals for this template is to keep `create-react-app` in place and fully functional. Many minds have worked tirelessly on that project, and I am more then happy to work with the fruits of that effort.

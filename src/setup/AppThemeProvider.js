@@ -1,5 +1,5 @@
-import React from 'react';
 import PropTypes from 'prop-types';
+import React from 'react';
 import { injectGlobal, ThemeProvider } from 'styled-components';
 
 import theme from 'style/theme';
@@ -11,6 +11,7 @@ function AppThemeProvider({ appTheme, children }) {
 
   injectGlobalStyles(appTheme);
 
+  console.log(appTheme);
   return (
     <ThemeProvider theme={appTheme}>
       {children}

@@ -2,8 +2,7 @@ import styled from 'styled-components';
 
 const Bar = styled.div`
   position: relative;
-  min-height: 150px;
-  margin-bottom: 150px;
+  min-height: 100px;
   width: 100%;
   background-color: ${props => props.theme.colors.primary};
   color: ${props => props.theme.colors.lightText};

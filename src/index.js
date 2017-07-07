@@ -1,8 +1,10 @@
+// This must be the first import of the application.
 import 'react-hot-loader/patch';
+import 'normalize.css/normalize.css';
+
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { AppContainer } from 'react-hot-loader';
-import 'normalize.css/normalize.css';
 
 import Root from 'setup/Root';
 
