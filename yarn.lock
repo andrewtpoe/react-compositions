@@ -2052,7 +2052,7 @@ dot-prop@^3.0.0:
   dependencies:
     is-obj "^1.0.0"
 
-dotenv@4.0.0:
+dotenv@4.0.0, dotenv@^4.0.0:
   version "4.0.0"
   resolved "https://registry.yarnpkg.com/dotenv/-/dotenv-4.0.0.tgz#864ef1379aced55ce6f95debecdce179f7a0cd1d"
 
@@ -3176,7 +3176,7 @@ ini@~1.3.0:
   version "1.3.4"
   resolved "https://registry.yarnpkg.com/ini/-/ini-1.3.4.tgz#0537cb79daf59b59a1a517dff706c86ec039162e"
 
-inline-style-prefixer@^3.0.2:
+inline-style-prefixer@^3.0.6:
   version "3.0.6"
   resolved "https://registry.yarnpkg.com/inline-style-prefixer/-/inline-style-prefixer-3.0.6.tgz#b27fe309b4168a31eaf38c8e8c60ab9e7c11731f"
   dependencies:
@@ -4727,6 +4727,10 @@ pluralize@^1.2.1:
   version "1.2.1"
   resolved "https://registry.yarnpkg.com/pluralize/-/pluralize-1.2.1.tgz#d1a21483fd22bb41e58a12fa3421823140897c45"
 
+polished@^1.3.0:
+  version "1.3.0"
+  resolved "https://registry.yarnpkg.com/polished/-/polished-1.3.0.tgz#ae0e26f0297297635fcd70a25a4a0f1947b3af54"
+
 portfinder@^1.0.9:
   version "1.0.13"
   resolved "https://registry.yarnpkg.com/portfinder/-/portfinder-1.0.13.tgz#bb32ecd87c27104ae6ee44b5a3ccbf0ebb1aede9"
@@ -5081,7 +5085,7 @@ promise@^7.1.1:
   dependencies:
     asap "~2.0.3"
 
-prop-types@^15.4.0, prop-types@^15.5.1, prop-types@^15.5.10, prop-types@^15.5.4, prop-types@^15.5.8:
+prop-types@^15.4.0, prop-types@^15.5.1, prop-types@^15.5.10, prop-types@^15.5.4:
   version "15.5.10"
   resolved "https://registry.yarnpkg.com/prop-types/-/prop-types-15.5.10.tgz#2797dfc3126182e3a95e3dfbb2e893ddd7456154"
   dependencies:
@@ -5178,6 +5182,19 @@ rc@^1.0.1, rc@^1.1.6, rc@^1.1.7:
     minimist "^1.2.0"
     strip-json-comments "~2.0.1"
 
+react-app-rewire-styled-components@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/react-app-rewire-styled-components/-/react-app-rewire-styled-components-2.0.0.tgz#7ebdb1033993da98c853e623fe52b8a75025db6a"
+  dependencies:
+    babel-plugin-styled-components "^1.1.4"
+
+react-app-rewired@^1.0.11:
+  version "1.0.11"
+  resolved "https://registry.yarnpkg.com/react-app-rewired/-/react-app-rewired-1.0.11.tgz#321ee7ce8bafe53ca797b0b5536cf9576bd089a4"
+  dependencies:
+    cross-spawn "^5.1.0"
+    dotenv "^4.0.0"
+
 react-deep-force-update@^2.0.1:
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/react-deep-force-update/-/react-deep-force-update-2.0.1.tgz#4f7f6c12c3e7de42f345992a3c518236fa1ecad3"
@@ -5269,9 +5286,9 @@ react-proxy@^3.0.0-alpha.0:
   dependencies:
     lodash "^4.6.1"
 
-react-router-dom@^4.1.1:
-  version "4.1.1"
-  resolved "https://registry.yarnpkg.com/react-router-dom/-/react-router-dom-4.1.1.tgz#3021ade1f2c160af97cf94e25594c5f294583025"
+react-router-dom@^4.1.2:
+  version "4.1.2"
+  resolved "https://registry.yarnpkg.com/react-router-dom/-/react-router-dom-4.1.2.tgz#7f8a7ca868d32acadd19ca09543b40d26df8ec37"
   dependencies:
     history "^4.5.1"
     loose-envify "^1.3.1"
@@ -5333,12 +5350,12 @@ react-scripts@^1.0.10:
   optionalDependencies:
     fsevents "1.1.2"
 
-react-split-pane@^0.1.63:
-  version "0.1.63"
-  resolved "https://registry.yarnpkg.com/react-split-pane/-/react-split-pane-0.1.63.tgz#fadb3960cc659911dd05ffbc88acee4be9f53583"
+react-split-pane@^0.1.65:
+  version "0.1.65"
+  resolved "https://registry.yarnpkg.com/react-split-pane/-/react-split-pane-0.1.65.tgz#37c0b5ea5c960827e7f3621d0a114b0f8c9c8918"
   dependencies:
-    inline-style-prefixer "^3.0.2"
-    prop-types "^15.5.8"
+    inline-style-prefixer "^3.0.6"
+    prop-types "^15.5.10"
     react-style-proptype "^3.0.0"
 
 react-style-proptype@^3.0.0:
@@ -5357,9 +5374,9 @@ react@^15.4.0, react@^15.5.4:
     object-assign "^4.1.0"
     prop-types "^15.5.10"
 
-reactive-container@0.0.4:
-  version "0.0.4"
-  resolved "https://npm.fury.io/andrewtpoe/reactive-container/-/0.0.4.tgz?auth=-xc-iPbLAGz7PVs85_qW#4dc0d05b2950ae300ebeae889f625158fbbc252f"
+"reactive-container@git+ssh://git@github.decisiv.net/Development/reactive-container.git#28ca4d22fdec2e05aaee20329cf60bafb5b023ab":
+  version "0.0.8"
+  resolved "git+ssh://git@github.decisiv.net/Development/reactive-container.git#28ca4d22fdec2e05aaee20329cf60bafb5b023ab"
   dependencies:
     element-resize-detector "^1.1.0"
     lodash "^4.17.0"
@@ -6094,6 +6111,20 @@ style-loader@0.18.2:
   dependencies:
     loader-utils "^1.0.2"
     schema-utils "^0.3.0"
+
+"styled-components-modifiers@git+ssh://git@github.decisiv.net/Development/styled-components-modifiers.git#7a53390edbcee6981a6cf1b52cf8ab8c08e09dd3":
+  version "0.0.4"
+  resolved "git+ssh://git@github.decisiv.net/Development/styled-components-modifiers.git#7a53390edbcee6981a6cf1b52cf8ab8c08e09dd3"
+  dependencies:
+    lodash "^4.17.0"
+    prop-types "^15.4.0"
+
+"styled-components-theme-validator@git+ssh://git@github.decisiv.net/Development/styled-components-theme-validator.git#0b598c3d8cb1cfb5d9101e9d32217bd830686cf5":
+  version "0.0.2"
+  resolved "git+ssh://git@github.decisiv.net/Development/styled-components-theme-validator.git#0b598c3d8cb1cfb5d9101e9d32217bd830686cf5"
+  dependencies:
+    lodash "^4.17.0"
+    prop-types "^15.4.0"
 
 styled-components@^2.1.1:
   version "2.1.1"

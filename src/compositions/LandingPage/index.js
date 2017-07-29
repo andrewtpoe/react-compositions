@@ -1,20 +1,34 @@
 import React from 'react';
+import { sizes } from 'reactive-container';
+import {
+  Column,
+  ReactiveContainer,
+  Row,
+} from 'styled-components-reactive-grid';
 
-import Bar, { BarImage } from 'components/Bar';
-import PageContent from 'components/PageContent';
+import Bar from 'components/Bar';
 
-function LandingPage({ Logo, children }) {
+import { pageBreakpoints } from './constants';
+
+function LandingPage({ children }) {
+  const { XS, SM, MD } = sizes;
+
   return (
     <section>
-      <Bar>
-        {Logo &&
-          <BarImage>
-            <Logo />
-          </BarImage>}
-      </Bar>
-      <PageContent>
-        {children}
-      </PageContent>
+      <Bar />
+      <ReactiveContainer breakpoints={pageBreakpoints}>
+        <Row>
+          <Column
+            responsiveModifiers={{
+              [XS]: ['col_10', 'col_offset_1'],
+              [SM]: ['col_8', 'col_offset_2'],
+              [MD]: ['col_6', 'col_offset_3'],
+            }}
+          >
+            {children}
+          </Column>
+        </Row>
+      </ReactiveContainer>
     </section>
   );
 }
