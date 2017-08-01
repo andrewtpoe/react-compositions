@@ -29,7 +29,7 @@
     "rimraf": "^2.6.1"
   },
   "scripts": {
-    "build": "npm run translate && cross-env NODE_PATH=src/ react-app-rewired build",
+    "build": "cross-env NODE_PATH=src/ react-app-rewired build",
     "build:clean": "rimraf ./build",
     "deploy": "gh-pages -d build",
     "eject": "react-scripts eject",
