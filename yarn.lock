@@ -6112,12 +6112,15 @@ style-loader@0.18.2:
     loader-utils "^1.0.2"
     schema-utils "^0.3.0"
 
-"styled-components-modifiers@git+ssh://git@github.decisiv.net/Development/styled-components-modifiers.git#7a53390edbcee6981a6cf1b52cf8ab8c08e09dd3":
-  version "0.0.4"
-  resolved "git+ssh://git@github.decisiv.net/Development/styled-components-modifiers.git#7a53390edbcee6981a6cf1b52cf8ab8c08e09dd3"
+"styled-components-modifiers@git+ssh://git@github.decisiv.net/Development/styled-components-modifiers.git#7f37e572dccb9e770a4daa0150b01a14c89fd445":
+  version "0.0.6"
+  resolved "git+ssh://git@github.decisiv.net/Development/styled-components-modifiers.git#7f37e572dccb9e770a4daa0150b01a14c89fd445"
+
+"styled-components-reactive-grid@git+ssh://git@github.decisiv.net/Development/styled-components-reactive-grid.git#97f6ca6a59104b57fa0e6b264a44e9998306f569":
+  version "0.0.6"
+  resolved "git+ssh://git@github.decisiv.net/Development/styled-components-reactive-grid.git#97f6ca6a59104b57fa0e6b264a44e9998306f569"
   dependencies:
-    lodash "^4.17.0"
-    prop-types "^15.4.0"
+    styled-components-theme-validator "git+ssh://git@github.decisiv.net/Development/styled-components-theme-validator.git#0b598c3d8cb1cfb5d9101e9d32217bd830686cf5"
 
 "styled-components-theme-validator@git+ssh://git@github.decisiv.net/Development/styled-components-theme-validator.git#0b598c3d8cb1cfb5d9101e9d32217bd830686cf5":
   version "0.0.2"

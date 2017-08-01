@@ -6,16 +6,13 @@ import {
   Row,
 } from 'styled-components-reactive-grid';
 
-import Bar from 'components/Bar';
-
 import { pageBreakpoints } from './constants';
 
-function LandingPage({ children }) {
+function Page({ children }) {
   const { XS, SM, MD } = sizes;
 
   return (
     <section>
-      <Bar />
       <ReactiveContainer breakpoints={pageBreakpoints}>
         <Row>
           <Column
@@ -33,4 +30,4 @@ function LandingPage({ children }) {
   );
 }
 
-export default LandingPage;
+export default Page;
