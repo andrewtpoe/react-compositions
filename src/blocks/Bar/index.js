@@ -1,4 +1,3 @@
-import { lighten } from 'polished';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import {
@@ -15,12 +14,12 @@ const COMPONENT_NAME = 'Bar';
 const MODIFIER_CONFIG = {
   level_1: ({ theme }) => ({
     styles: `
-      background-color: ${lighten(0.2, theme.colors.primary)};
+      background-color: ${theme.colors.primaryLight};
     `,
   }),
   level_2: ({ theme }) => ({
     styles: `
-      background-color: ${lighten(0.1, theme.colors.primary)};
+      background-color: ${theme.colors.primaryDark)};
     `,
   }),
   fullHeight: () => ({
@@ -38,6 +37,8 @@ const MODIFIER_CONFIG = {
 const THEME_PROPTYPES = buildThemePropTypes({
   colors: PropTypes.shape({
     primary: PropTypes.string.isRequired
+    primaryDark: PropTypes.string.isRequired
+    primaryLight: PropTypes.string.isRequired
   }).isRequired,
 })
 

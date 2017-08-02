@@ -14,10 +14,14 @@ const COMPONENT_NAME = 'Button';
 const MODIFIER_CONFIG = {
   ghost: ({ theme }) => ({
     styles: `
-      background-color: ${theme.colors.chrome100};
+      background-color: ${theme.colors.chrome000};
+      border: 1px solid ${theme.colors.chrome100};
+      color: ${theme.colors.chrome100};
+      transition: box-shadow 0.3s ease,
+                  color 0.3s ease;
       &:hover {
-        background-color: ${theme.colors.chrome000};
-        color: ${theme.colors.textLight};
+        box-shadow: 0 2px 2px 2px ${theme.colors.shadowLight};
+        color: ${theme.colors.chrome200};
       }
     `,
   }),
@@ -30,13 +34,19 @@ const MODIFIER_CONFIG = {
 
 const THEME_PROPTYPES = buildThemePropTypes({
   colors: PropTypes.shape({
-    primary: PropTypes.string.isRequired
+    chrome000: PropTypes.string.isRequired,
+    chrome100: PropTypes.string.isRequired,
+    chrome200: PropTypes.string.isRequired,
+    shadowLight: PropTypes.string.isRequired,
+  }).isRequired,
+  dimensions: PropTypes.shape({
+    baseSizePx: PropTypes.string.isRequired,
+    gapPx: PropTypes.string.isRequired
   }).isRequired,
 })
 
 const Button = styled.button`
   ${validateTheme(COMPONENT_NAME, THEME_PROPTYPES)}
-  border: 1px solid ${props => props.theme.colors.chrome200};
   border-radius: 2px;
   outline: none;
   ${applyStyleModifiers(MODIFIER_CONFIG)}
