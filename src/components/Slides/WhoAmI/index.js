@@ -5,7 +5,7 @@ const content = `
 # Who Am I?
 
 - Andrew T. Poe
-- Front End Developer at Decisiv ([yes we're hiring](https://www.decisiv.com/careers))
+- Front End Developer at Decisiv ([yes, we're hiring](https://www.decisiv.com/careers))
 - I <3 React
 
 `;

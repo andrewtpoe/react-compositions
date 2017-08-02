@@ -2,7 +2,9 @@ import React from 'react';
 import ReactMarkdown from 'react-markdown';
 
 const content = `
-# Lets talk about building a complex React application with Styled Components
+# Building a complex React application with Styled Components
+
+(use the <- or -> arrow keys to navigate, or click the buttons)
 `;
 
 function PartOne() {

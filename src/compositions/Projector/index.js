@@ -1,10 +1,8 @@
-import PropTypes from 'prop-types'
+import { compact } from 'lodash';
+import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import { sizes } from 'reactive-container';
-import {
-  Column,
-  ReactiveContainer,
-} from 'styled-components-reactive-grid';
+import { Column, ReactiveContainer } from 'styled-components-reactive-grid';
 
 import Button from 'blocks/Button';
 import FullHeightRow from 'blocks/FullHeightRow';
@@ -15,54 +13,49 @@ import { breakpoints } from './constants';
 const { XS, SM, MD } = sizes;
 
 function next({ slideIndex }, { slides }) {
-  const newSlideIndex = (slides.length - 2) >= slideIndex ? slideIndex + 1 : slideIndex;
+  const newSlideIndex =
+    slides.length - 2 >= slideIndex ? slideIndex + 1 : slideIndex;
   return {
     slideIndex: newSlideIndex,
-  }
+  };
 }
 
 function previous({ slideIndex }, { slides }) {
   const newSlideIndex = slideIndex === 0 ? 0 : slideIndex - 1;
   return {
     slideIndex: newSlideIndex,
-  }
+  };
 }
 
 class Projector extends Component {
   static propTypes = {
     slides: PropTypes.array,
-  }
+  };
 
   static defaultProps = {
-    slides: []
-  }
+    slides: [],
+  };
 
   state = {
     slideIndex: 0,
-  }
+  };
 
   componentDidMount() {
-    window.addEventListener(
-      'keydown',
-      this.keypressEventHandler,
-    );
+    window.addEventListener('keydown', this.keypressEventHandler);
   }
 
   componentWillUnmount() {
-    window.removeEventListener(
-      'keydown',
-      this.keypressEventHandler,
-    );
+    window.removeEventListener('keydown', this.keypressEventHandler);
   }
 
-  keypressEventHandler = (e) => {
-    if (e.key === "ArrowLeft") {
+  keypressEventHandler = e => {
+    if (e.key === 'ArrowLeft') {
       this.setState(previous);
     }
-    if (e.key === "ArrowRight") {
+    if (e.key === 'ArrowRight') {
       this.setState(next);
     }
-  }
+  };
 
   currentSlide() {
     const CurrentSlide = this.props.slides[this.state.slideIndex];
@@ -70,6 +63,9 @@ class Projector extends Component {
   }
 
   render() {
+    const previousDisabled = this.state.slideIndex === 0;
+    const nextDisabled = this.props.slides.length === this.state.slideIndex + 1;
+
     return (
       <ReactiveContainer breakpoints={breakpoints}>
         <FullHeightRow modifiers={['middle']}>
@@ -82,7 +78,12 @@ class Projector extends Component {
             }}
           >
             <Button
-              modifiers={['ghost', 'xl']}
+              disabled={previousDisabled}
+              modifiers={compact([
+                previousDisabled && 'disabled',
+                'ghost',
+                'xl',
+              ])}
               onClick={() => this.setState(previous)}
             >
               <Icon modifiers={['xlFontSize']} name="arrow-left" />
@@ -110,7 +111,8 @@ class Projector extends Component {
             }}
           >
             <Button
-              modifiers={['ghost', 'xl']}
+              disabled={nextDisabled}
+              modifiers={compact([nextDisabled && 'disabled', 'ghost', 'xl'])}
               onClick={() => this.setState(next)}
             >
               <Icon modifiers={['xlFontSize']} name="arrow-right" />
