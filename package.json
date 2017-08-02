@@ -9,6 +9,7 @@
     "prop-types": "^15.5.10",
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
+    "react-fontawesome": "^1.6.1",
     "react-markdown": "^2.5.0",
     "react-split-pane": "^0.1.65",
     "reactive-container": "git+ssh://git@github.decisiv.net/Development/reactive-container.git#28ca4d22fdec2e05aaee20329cf60bafb5b023ab",

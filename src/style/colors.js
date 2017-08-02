@@ -18,4 +18,5 @@ export default {
   secondaryLight: lighten(0.2, secondary),
 
   text,
+  textLight: lighten(0.2, text),
 };

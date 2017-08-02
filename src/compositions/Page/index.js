@@ -17,12 +17,30 @@ function Page({ children }) {
         <Row>
           <Column
             responsiveModifiers={{
-              [XS]: ['col_10', 'col_offset_1'],
-              [SM]: ['col_8', 'col_offset_2'],
-              [MD]: ['col_6', 'col_offset_3'],
+              [XS]: ['col_1'],
+              [SM]: ['col_2'],
+              [MD]: ['col_3'],
+            }}
+          >
+
+          </Column>
+          <Column
+            responsiveModifiers={{
+              [XS]: ['col_10'],
+              [SM]: ['col_8'],
+              [MD]: ['col_6'],
             }}
           >
             {children}
+          </Column>
+          <Column
+            responsiveModifiers={{
+              [XS]: ['col_1'],
+              [SM]: ['col_2'],
+              [MD]: ['col_3'],
+            }}
+          >
+
           </Column>
         </Row>
       </ReactiveContainer>
