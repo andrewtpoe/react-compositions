@@ -10,7 +10,7 @@ import {
   validateTheme,
 } from 'styled-components-theme-validator';
 
-const COMPONENT_NAME = 'Box';
+const COMPONENT_NAME = 'Bar';
 
 const MODIFIER_CONFIG = {
   level_1: ({ theme }) => ({
@@ -41,7 +41,7 @@ const THEME_PROPTYPES = buildThemePropTypes({
   }).isRequired,
 })
 
-const Box = styled.div`
+const Bar = styled.div`
   ${validateTheme(COMPONENT_NAME, THEME_PROPTYPES)}
   padding: 0.25rem;
   min-height: 2rem;
@@ -49,10 +49,10 @@ const Box = styled.div`
   ${applyStyleModifiers(MODIFIER_CONFIG)}
 `;
 
-Box.propTypes = {
+Bar.propTypes = {
   modifiers: styleModifierPropTypes(MODIFIER_CONFIG),
 };
 
-Box.displayName = COMPONENT_NAME;
+Bar.displayName = COMPONENT_NAME;
 
-export default Box;
+export default Bar;
