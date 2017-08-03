@@ -5,9 +5,11 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { AppContainer } from 'react-hot-loader';
 
+import registerMemoryDB from 'setup/registerMemoryDB';
+import registerServiceWorker from 'setup/registerServiceWorker';
 import Root from 'setup/Root';
 
-import registerServiceWorker from './registerServiceWorker';
+registerMemoryDB();
 
 const root = document.getElementById('root');
 

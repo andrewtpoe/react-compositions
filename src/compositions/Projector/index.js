@@ -1,8 +1,8 @@
-import { compact } from 'lodash';
+import { compact, isNaN } from 'lodash';
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import { sizes } from 'reactive-container';
-import { Column, ReactiveContainer } from 'styled-components-reactive-grid';
+import { Column, Container, ReactiveContainer } from 'styled-components-reactive-grid';
 
 import Button from 'blocks/Button';
 import FullHeightRow from 'blocks/FullHeightRow';
@@ -12,9 +12,40 @@ import { breakpoints } from './constants';
 
 const { XS, SM, MD } = sizes;
 
+function saveSlideIndex(slideIndex) {
+  window.memoryDB.setItem('REACT_COMPOSITIONS__slideIndex', slideIndex);
+  window.memoryDB.setItem('REACT_COMPOSITIONS__slideIndexSavedAt', Date.now());
+}
+
+function savedSlideIndex() {
+  const savedAt = parseInt(
+    window.memoryDB.REACT_COMPOSITIONS__slideIndexSavedAt,
+    10,
+  );
+
+  // uses a user's previous slideIndex for 10 minutes. Then slideIndex expires.
+  if (!isNaN(savedAt) && Date.now() - 600000 < savedAt) {
+    const slideIndex = parseInt(
+      window.memoryDB.REACT_COMPOSITIONS__slideIndex,
+      10,
+    );
+
+    return {
+      slideIndex,
+    };
+  }
+}
+
 function next({ slideIndex }, { slides }) {
   const newSlideIndex =
     slides.length - 2 >= slideIndex ? slideIndex + 1 : slideIndex;
+
+  if ((newSlideIndex + 1) === slides.length) {
+    saveSlideIndex(0);
+  } else {
+    saveSlideIndex(newSlideIndex);
+  }
+
   return {
     slideIndex: newSlideIndex,
   };
@@ -22,6 +53,9 @@ function next({ slideIndex }, { slides }) {
 
 function previous({ slideIndex }, { slides }) {
   const newSlideIndex = slideIndex === 0 ? 0 : slideIndex - 1;
+
+  saveSlideIndex(newSlideIndex);
+
   return {
     slideIndex: newSlideIndex,
   };
@@ -39,6 +73,10 @@ class Projector extends Component {
   state = {
     slideIndex: 0,
   };
+
+  componentWillMount() {
+    this.setState(savedSlideIndex);
+  }
 
   componentDidMount() {
     window.addEventListener('keydown', this.keypressEventHandler);
@@ -96,11 +134,11 @@ class Projector extends Component {
               [MD]: ['col_6'],
             }}
           >
-            <ReactiveContainer breakpoints={breakpoints}>
+            <Container>
               <FullHeightRow modifiers={['middle']}>
                 {this.currentSlide()}
               </FullHeightRow>
-            </ReactiveContainer>
+            </Container>
           </Column>
           <Column
             modifiers={['center']}
