@@ -5,11 +5,14 @@ const content = `
 # Core Terminology
 
 - Blocks, Elements, & Modifiers (BEM)
+
 - Components
+
 - Compositions
+
 - Containers
 
-Chances are if you build with React you've heard most of these words before. Let's make sure we are on the same page with their definitions before we continue.
+Chances are if you know React you've heard most of these words before.
 `;
 
 function CoreTerminology() {

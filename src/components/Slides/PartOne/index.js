@@ -3,8 +3,7 @@ import ReactMarkdown from 'react-markdown';
 
 const content = `
 # Building a complex React application with Styled Components
-
-(use the <- or -> arrow keys to navigate, or click the buttons)
+(use the <- or -> keys to navigate, or click the buttons)
 `;
 
 function PartOne() {

@@ -2,7 +2,7 @@ import React from 'react';
 import ReactMarkdown from 'react-markdown';
 
 const content = `
-# The End (for now...)
+# The end (for now...)
 (refresh the page to start over)
 `;
 
