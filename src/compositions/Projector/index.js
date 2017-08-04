@@ -114,8 +114,7 @@ class Projector extends Component {
             }}
           >
             <ControlButton
-              disabled={previousDisabled}
-              hidden={this.props.size === XS}
+              hidden={this.props.size === XS || previousDisabled}
               onClick={() => this.setState(previous)}
               type="previous"
             />
@@ -134,16 +133,14 @@ class Projector extends Component {
               <Row>
                 <Column modifiers={['col']}>
                   <ControlButton
-                    disabled={previousDisabled}
-                    hidden={this.props.size !== XS}
+                    hidden={this.props.size !== XS || previousDisabled}
                     onClick={() => this.setState(previous)}
                     type="previous"
                   />
                 </Column>
                 <Column modifiers={['col', 'end']}>
                   <ControlButton
-                    disabled={nextDisabled}
-                    hidden={this.props.size !== XS}
+                    hidden={this.props.size !== XS || nextDisabled}
                     onClick={() => this.setState(next)}
                     type="next"
                   />
@@ -160,8 +157,7 @@ class Projector extends Component {
             }}
           >
             <ControlButton
-              disabled={nextDisabled}
-              hidden={this.props.size === XS}
+              hidden={this.props.size === XS || nextDisabled}
               onClick={() => this.setState(next)}
               type="next"
             />

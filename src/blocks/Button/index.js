@@ -12,14 +12,6 @@ import {
 const COMPONENT_NAME = 'Button';
 
 const MODIFIER_CONFIG = {
-  disabled: ({ theme }) => ({
-    styles: `
-      &:hover {
-        box-shadow: none !important;
-        color: ${theme.colors.chrome100} !important;
-      }
-    `,
-  }),
   hidden: () => ({
     styles: `
       display: none;
