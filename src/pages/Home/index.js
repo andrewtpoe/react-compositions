@@ -1,14 +1,17 @@
 import React from 'react';
+import { ReactiveContainer } from 'styled-components-reactive-grid';
 
 import slides from 'components/Slides';
 
 import Projector from 'compositions/Projector';
 
+import { breakpoints } from './constants';
+
 function Home() {
   return (
-    <Projector
-      slides={slides}
-    />
+    <ReactiveContainer breakpoints={breakpoints} >
+      <Projector slides={slides} />
+    </ReactiveContainer>
   );
 }
 

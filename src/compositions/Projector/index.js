@@ -1,14 +1,12 @@
-import { compact, isNaN } from 'lodash';
+import { isNaN } from 'lodash';
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
-import { sizes } from 'reactive-container';
-import { Column, Container, ReactiveContainer } from 'styled-components-reactive-grid';
+import { sizes, withSize } from 'reactive-container';
+import { Column, Container, Row } from 'styled-components-reactive-grid';
 
-import Button from 'blocks/Button';
 import FullHeightRow from 'blocks/FullHeightRow';
-import Icon from 'blocks/Icon';
 
-import { breakpoints } from './constants';
+import ControlButton from './ControlButton';
 
 const { XS, SM, MD } = sizes;
 
@@ -63,6 +61,7 @@ function previous({ slideIndex }, { slides }) {
 
 class Projector extends Component {
   static propTypes = {
+    size: PropTypes.oneOf([XS, SM, MD]).isRequired,
     slides: PropTypes.array,
   };
 
@@ -105,7 +104,6 @@ class Projector extends Component {
     const nextDisabled = this.props.slides.length === this.state.slideIndex + 1;
 
     return (
-      <ReactiveContainer breakpoints={breakpoints}>
         <FullHeightRow modifiers={['middle']}>
           <Column
             modifiers={['center']}
@@ -115,17 +113,12 @@ class Projector extends Component {
               [MD]: ['col_3'],
             }}
           >
-            <Button
+            <ControlButton
               disabled={previousDisabled}
-              modifiers={compact([
-                previousDisabled && 'disabled',
-                'ghost',
-                'xl',
-              ])}
+              hidden={this.props.size === XS}
               onClick={() => this.setState(previous)}
-            >
-              <Icon modifiers={['xlFontSize']} name="arrow-left" />
-            </Button>
+              type="previous"
+            />
           </Column>
           <Column
             responsiveModifiers={{
@@ -135,9 +128,27 @@ class Projector extends Component {
             }}
           >
             <Container>
-              <FullHeightRow modifiers={['middle']}>
+              <Row modifiers={['middle']}>
                 {this.currentSlide()}
-              </FullHeightRow>
+              </Row>
+              <Row>
+                <Column modifiers={['col']}>
+                  <ControlButton
+                    disabled={previousDisabled}
+                    hidden={this.props.size !== XS}
+                    onClick={() => this.setState(previous)}
+                    type="previous"
+                  />
+                </Column>
+                <Column modifiers={['col', 'end']}>
+                  <ControlButton
+                    disabled={nextDisabled}
+                    hidden={this.props.size !== XS}
+                    onClick={() => this.setState(next)}
+                    type="next"
+                  />
+                </Column>
+              </Row>
             </Container>
           </Column>
           <Column
@@ -148,18 +159,16 @@ class Projector extends Component {
               [MD]: ['col_3'],
             }}
           >
-            <Button
+            <ControlButton
               disabled={nextDisabled}
-              modifiers={compact([nextDisabled && 'disabled', 'ghost', 'xl'])}
+              hidden={this.props.size === XS}
               onClick={() => this.setState(next)}
-            >
-              <Icon modifiers={['xlFontSize']} name="arrow-right" />
-            </Button>
+              type="next"
+            />
           </Column>
         </FullHeightRow>
-      </ReactiveContainer>
     );
   }
 }
 
-export default Projector;
+export default withSize(Projector);

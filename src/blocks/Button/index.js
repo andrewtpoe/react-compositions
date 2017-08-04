@@ -20,6 +20,11 @@ const MODIFIER_CONFIG = {
       }
     `,
   }),
+  hidden: () => ({
+    styles: `
+      display: none;
+    `,
+  }),
   ghost: ({ theme }) => ({
     styles: `
       background-color: ${theme.colors.chrome000};
