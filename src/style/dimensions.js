@@ -5,5 +5,6 @@ export default {
   baseSizePx: `${baseSize}px`,
   gapPx: `${baseSize / 2}px`,
   gridPad: `${baseSize / 4}px`,
+  lineHeight: `${baseSize * 2}px`,
   xlFontPx: `${baseSize * 2}px`,
 };

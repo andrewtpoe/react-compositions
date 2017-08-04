@@ -15,16 +15,13 @@ function getIconName(type) {
 }
 
 function ControlButton({
-  disabled,
   hidden,
   onClick,
   type,
 }) {
   return (
     <Button
-      disabled={disabled}
       modifiers={compact([
-        disabled && 'disabled',
         hidden && 'hidden',
         'ghost',
         'xl',
@@ -37,7 +34,6 @@ function ControlButton({
 }
 
 ControlButton.propTypes = {
-  disabled: PropTypes.bool.isRequired,
   hidden: PropTypes.bool.isRequired,
   onClick: PropTypes.func.isRequired,
   type: PropTypes.oneOf(['next', 'previous']).isRequired,

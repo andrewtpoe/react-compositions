@@ -6,6 +6,13 @@ function buildGlobalStyleString(appTheme) {
       color: ${appTheme.colors.text};
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
       font-size: ${appTheme.dimensions.baseSizePx};
+      line-height: ${appTheme.dimensions.lineHeight};
+    }
+
+    code {
+      background-color: ${appTheme.colors.chrome200};
+      border-radius: 4px;
+      padding: ${appTheme.dimensions.gridPad} ${appTheme.dimensions.gapPx};
     }
 
     .Resizer {
