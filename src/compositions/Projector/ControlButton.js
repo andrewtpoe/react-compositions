@@ -1,4 +1,3 @@
-import { compact } from 'lodash';
 import PropTypes from 'prop-types';
 import React from 'react';
 
@@ -14,27 +13,15 @@ function getIconName(type) {
   return typeMap[type];
 }
 
-function ControlButton({
-  hidden,
-  onClick,
-  type,
-}) {
+function ControlButton({ onClick, type }) {
   return (
-    <Button
-      modifiers={compact([
-        hidden && 'hidden',
-        'ghost',
-        'xl',
-      ])}
-      onClick={() => onClick()}
-    >
+    <Button modifiers={['ghost', 'xl']} onClick={() => onClick()}>
       <Icon modifiers={['xlFontSize']} name={getIconName(type)} />
     </Button>
   );
 }
 
 ControlButton.propTypes = {
-  hidden: PropTypes.bool.isRequired,
   onClick: PropTypes.func.isRequired,
   type: PropTypes.oneOf(['next', 'previous']).isRequired,
 };

@@ -2,7 +2,7 @@ import React from 'react';
 import ReactMarkdown from 'react-markdown';
 
 const content = `
-# Hope on the Horizon
+# What can be done?
 
 - It is possible to create an HTML Element resize listener with JavaScript.
   - [This article](http://www.backalleycoder.com/2013/03/18/cross-browser-event-based-element-resize-detection/) began a journey
