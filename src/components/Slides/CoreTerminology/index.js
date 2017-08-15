@@ -8,7 +8,6 @@ const content = `
 - Components
 - Compositions
 - Containers
-Chances are if you know React you've heard most of these words before.
 `;
 
 function CoreTerminology() {

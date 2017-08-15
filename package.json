@@ -13,30 +13,27 @@
     "react-fontawesome": "^1.6.1",
     "react-markdown": "^2.5.0",
     "react-split-pane": "^0.1.65",
-    "reactive-container": "git+ssh://git@github.decisiv.net/Development/reactive-container.git#28ca4d22fdec2e05aaee20329cf60bafb5b023ab",
+    "reactive-container": "git+ssh://git@github.decisiv.net/Development/reactive-container.git#0.0.8",
     "styled-components": "^2.1.1",
-    "styled-components-modifiers": "git+ssh://git@github.decisiv.net/Development/styled-components-modifiers.git#7f37e572dccb9e770a4daa0150b01a14c89fd445",
-    "styled-components-reactive-grid": "git+ssh://git@github.decisiv.net/Development/styled-components-reactive-grid.git#97f6ca6a59104b57fa0e6b264a44e9998306f569",
-    "styled-components-theme-validator": "git+ssh://git@github.decisiv.net/Development/styled-components-theme-validator.git#0b598c3d8cb1cfb5d9101e9d32217bd830686cf5"
+    "styled-components-modifiers": "git+ssh://git@github.decisiv.net/Development/styled-components-modifiers.git#0.0.6",
+    "styled-components-reactive-grid": "git+ssh://git@github.decisiv.net/Development/styled-components-reactive-grid#0.0.9",
+    "styled-components-theme-validator": "git+ssh://git@github.decisiv.net/Development/styled-components-theme-validator.git#0.0.2"
   },
   "devDependencies": {
     "babel-cli": "^6.24.1",
-    "babel-plugin-styled-components": "^1.1.4",
     "babel-preset-react-app": "^3.0.0",
     "cross-env": "^5.0.2",
-    "react-app-rewire-styled-components": "^2.0.0",
-    "react-app-rewired": "^1.1.0",
     "react-hot-loader": "next",
     "react-scripts": "^1.0.10",
     "rimraf": "^2.6.1"
   },
   "scripts": {
-    "build": "cross-env NODE_PATH=src/ react-app-rewired build",
+    "build": "cross-env NODE_PATH=src/ react-scripts build",
     "build:clean": "rimraf ./build",
     "deploy": "gh-pages -d build",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
-    "start": "cross-env NODE_PATH=src react-app-rewired start",
-    "test": "react-app-rewired test --env=jsdom"
+    "start": "cross-env NODE_PATH=src react-scripts start",
+    "test": "react-scripts test --env=jsdom"
   }
 }

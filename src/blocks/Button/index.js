@@ -1,22 +1,14 @@
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import {
-  applyStyleModifiers,
-  styleModifierPropTypes,
-} from 'styled-components-modifiers';
-import {
-  buildThemePropTypes,
-  validateTheme,
-} from 'styled-components-theme-validator';
 
-const COMPONENT_NAME = 'Button';
+import buildStyledComponent from 'utils/buildStyledComponent';
 
-const MODIFIER_CONFIG = {
-  hidden: () => ({
-    styles: `
-      display: none;
-    `,
-  }),
+const styles = () => `
+  border-radius: 2px;
+  outline: none;
+`;
+
+const modifierConfig = {
   ghost: ({ theme }) => ({
     styles: `
       background-color: ${theme.colors.chrome000};
@@ -37,7 +29,7 @@ const MODIFIER_CONFIG = {
   })
 };
 
-const THEME_PROPTYPES = buildThemePropTypes({
+const themePropTypes = {
   colors: PropTypes.shape({
     chrome000: PropTypes.string.isRequired,
     chrome100: PropTypes.string.isRequired,
@@ -48,19 +40,11 @@ const THEME_PROPTYPES = buildThemePropTypes({
     baseSizePx: PropTypes.string.isRequired,
     gapPx: PropTypes.string.isRequired
   }).isRequired,
-})
-
-const Button = styled.button`
-  ${validateTheme(COMPONENT_NAME, THEME_PROPTYPES)}
-  border-radius: 2px;
-  outline: none;
-  ${applyStyleModifiers(MODIFIER_CONFIG)}
-`;
-
-Button.propTypes = {
-  modifiers: styleModifierPropTypes(MODIFIER_CONFIG),
 };
 
-Button.displayName = COMPONENT_NAME;
-
-export default Button;
+export default buildStyledComponent(
+  'Button',
+  styled.button,
+  styles,
+  { modifierConfig, themePropTypes }
+)

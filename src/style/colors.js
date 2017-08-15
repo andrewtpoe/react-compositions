@@ -24,9 +24,9 @@ export default {
   // secondaryDark: darken(0.2, secondary),
   // secondaryLight: lighten(0.2, secondary),
 
-  // shadow: rgba(text, 0.4),
+  shadow: rgba(text, 0.4),
   shadowLight: rgba(lighten(0.6, text), 0.4),
 
   text,
-  // textLight: lighten(0.2, text),
+  textLight: lighten(0.2, text),
 };

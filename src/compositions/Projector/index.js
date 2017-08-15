@@ -38,7 +38,7 @@ function next({ slideIndex }, { slides }) {
   const newSlideIndex =
     slides.length - 2 >= slideIndex ? slideIndex + 1 : slideIndex;
 
-  if ((newSlideIndex + 1) === slides.length) {
+  if (newSlideIndex + 1 === slides.length) {
     saveSlideIndex(0);
   } else {
     saveSlideIndex(newSlideIndex);
@@ -85,6 +85,21 @@ class Projector extends Component {
     window.removeEventListener('keydown', this.keypressEventHandler);
   }
 
+  currentSlide() {
+    const CurrentSlide = this.props.slides[this.state.slideIndex];
+    return <CurrentSlide />;
+  }
+
+  handleNextClick = () => {
+    window.scrollTo(0, 0);
+    this.setState(next);
+  }
+
+  handlePreviousClick = () => {
+    window.scrollTo(0, 0);
+    this.setState(previous);
+  }
+
   keypressEventHandler = e => {
     if (e.key === 'ArrowLeft') {
       this.setState(previous);
@@ -94,75 +109,89 @@ class Projector extends Component {
     }
   };
 
-  currentSlide() {
-    const CurrentSlide = this.props.slides[this.state.slideIndex];
-    return <CurrentSlide />;
-  }
-
   render() {
-    const previousDisabled = this.state.slideIndex === 0;
-    const nextDisabled = this.props.slides.length === this.state.slideIndex + 1;
-
     return (
-        <FullHeightRow modifiers={['middle']}>
+      <FullHeightRow modifiers={['middle']}>
+        <Column
+          modifiers={['center']}
+          responsiveModifiers={{
+            [XS]: ['col_1'],
+            [SM]: ['col_2'],
+            [MD]: ['col_3'],
+          }}
+        >
           <Column
-            modifiers={['center']}
             responsiveModifiers={{
-              [XS]: ['col_1'],
-              [SM]: ['col_2'],
-              [MD]: ['col_3'],
+              [XS]: ['noDisplay'],
             }}
           >
             <ControlButton
-              hidden={this.props.size === XS || previousDisabled}
-              onClick={() => this.setState(previous)}
+              onClick={this.handlePreviousClick}
               type="previous"
             />
           </Column>
-          <Column
-            responsiveModifiers={{
-              [XS]: ['col_10'],
-              [SM]: ['col_8'],
-              [MD]: ['col_6'],
-            }}
-          >
-            <Container>
-              <Row modifiers={['middle']}>
-                {this.currentSlide()}
-              </Row>
-              <Row>
-                <Column modifiers={['col']}>
+        </Column>
+        <Column
+          responsiveModifiers={{
+            [XS]: ['col_10'],
+            [SM]: ['col_8'],
+            [MD]: ['col_6'],
+          }}
+        >
+          <Container>
+            <Row modifiers={['middle']}>
+              {this.currentSlide()}
+            </Row>
+            <Row>
+              <Column modifiers={['col']}>
+                <Column
+                  responsiveModifiers={{
+                    [SM]: ['noDisplay'],
+                    [MD]: ['noDisplay'],
+                  }}
+                >
                   <ControlButton
-                    hidden={this.props.size !== XS || previousDisabled}
-                    onClick={() => this.setState(previous)}
+                    onClick={this.handlePreviousClick}
                     type="previous"
                   />
                 </Column>
-                <Column modifiers={['col', 'end']}>
+              </Column>
+              <Column modifiers={['col', 'end']}>
+                <Column
+                  responsiveModifiers={{
+                    [SM]: ['noDisplay'],
+                    [MD]: ['noDisplay'],
+                  }}
+                >
                   <ControlButton
-                    hidden={this.props.size !== XS || nextDisabled}
-                    onClick={() => this.setState(next)}
+                    onClick={this.handleNextClick}
                     type="next"
                   />
                 </Column>
-              </Row>
-            </Container>
-          </Column>
+              </Column>
+            </Row>
+          </Container>
+        </Column>
+        <Column
+          modifiers={['center']}
+          responsiveModifiers={{
+            [XS]: ['col_1'],
+            [SM]: ['col_2'],
+            [MD]: ['col_3'],
+          }}
+        >
           <Column
-            modifiers={['center']}
             responsiveModifiers={{
-              [XS]: ['col_1'],
-              [SM]: ['col_2'],
-              [MD]: ['col_3'],
+              [XS]: ['noDisplay'],
             }}
           >
             <ControlButton
-              hidden={this.props.size === XS || nextDisabled}
-              onClick={() => this.setState(next)}
+              onClick={this.handleNextClick}
               type="next"
             />
           </Column>
-        </FullHeightRow>
+        </Column>
+      </FullHeightRow>
     );
   }
 }

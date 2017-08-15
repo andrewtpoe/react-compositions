@@ -1,13 +1,7 @@
-import React from 'react';
-import ReactMarkdown from 'react-markdown';
+import Part1 from './Part1';
+import Part2 from './Part2';
 
-const content = `
-# The end (for now...)
-(refresh the page to start over)
-`;
-
-function TheEnd() {
-  return <ReactMarkdown source={content} />;
-}
-
-export default TheEnd;
+export default [
+  Part1,
+  Part2,
+];
