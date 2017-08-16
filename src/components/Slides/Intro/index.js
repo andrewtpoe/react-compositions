@@ -1,13 +1,11 @@
-import React from 'react';
-import ReactMarkdown from 'react-markdown';
+import Part1 from './Part1';
+import Part2 from './Part2';
+import Part3 from './Part3';
+import Part4 from './Part4';
 
-const content = `
-# Building a complex React application with Styled Components
-(use the <- or -> keys to navigate, or click the buttons)
-`;
-
-function PartOne() {
-  return <ReactMarkdown source={content} />;
-}
-
-export default PartOne;
+export default [
+  Part1,
+  Part2,
+  Part3,
+  Part4,
+]

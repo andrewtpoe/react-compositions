@@ -4,7 +4,7 @@ import { ReactiveContainer } from 'styled-components-reactive-grid';
 
 import Bar from 'blocks/Bar';
 
-const { XS, SM, MD, LG, XL } = sizes;
+const { SM, MD, LG, XL } = sizes;
 
 const BREAKPOINTS = [
   { name: SM, minWidth: 150 },
