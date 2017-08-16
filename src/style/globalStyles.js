@@ -9,10 +9,13 @@ function buildGlobalStyleString(appTheme) {
       line-height: ${appTheme.dimensions.lineHeight};
     }
 
-    code {
+    code,
+    pre {
       background-color: ${appTheme.colors.chrome200};
       border-radius: 4px;
+      line-height: 1.3rem;
       padding: ${appTheme.dimensions.gridPad} ${appTheme.dimensions.gapPx};
+      max-width: 100%;
     }
 
     .Resizer {
