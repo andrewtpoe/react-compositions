@@ -17,7 +17,7 @@ const content = `
 - [Styled Components](https://github.com/styled-components/styled-components)
   - Allows you to define simple React Components and dynamically generate a stylesheet.
   - Powerful & extremely flexible.
-    - Lacks documentation or guiding principles on how to wield it's power manageably.
+    - Lacks documentation or guiding principles on how to wield its power manageably.
     - With great power comes great responsibility
 `;
 
