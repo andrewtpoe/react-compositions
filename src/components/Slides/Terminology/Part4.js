@@ -13,8 +13,8 @@ const content = `
   - An \`InformationTable\` is a visual component. It is a Block (\`Table\`), may have other Elements (\`Table.Tr\`, \`Table.Th\`, \`Table.Td\`), and renders data.
 `;
 
-function Components() {
+function Part4() {
   return <ReactMarkdown source={content} />;
 }
 
-export default Components;
+export default Part4;

@@ -1,9 +1,12 @@
+import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import ReactMarkdown from 'react-markdown';
 
-import styledComponentCode from './Part4-styled-component-code.md'
+class AsyncReactMarkdown extends Component {
+  static propTypes = {
+    source: PropTypes.string.isRequired
+  }
 
-class Part4 extends Component {
   state = {
     content: '',
   }
@@ -13,7 +16,7 @@ class Part4 extends Component {
   }
 
   loadContent = async () => {
-    const content = await fetch(styledComponentCode)
+    const content = await fetch(this.props.source)
       .then(response => response.text());
     this.setState({ content });
   }
@@ -25,4 +28,4 @@ class Part4 extends Component {
   }
 }
 
-export default Part4;
+export default AsyncReactMarkdown;

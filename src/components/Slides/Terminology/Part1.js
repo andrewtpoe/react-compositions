@@ -10,8 +10,8 @@ const content = `
 - Containers
 `;
 
-function CoreTerminology() {
+function Part1() {
   return <ReactMarkdown source={content} />;
 }
 
-export default CoreTerminology;
+export default Part1;

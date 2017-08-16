@@ -13,8 +13,8 @@ const content = `
     - Blocks and Elements can both have Modifiers.
 `;
 
-function Part1() {
+function Part2() {
   return <ReactMarkdown source={content} />;
 }
 
-export default Part1;
+export default Part2;

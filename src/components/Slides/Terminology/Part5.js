@@ -11,8 +11,8 @@ const content = `
   - A \`ProfileCardGrid\` renders a group of \`ProfileCard\`s.
 `;
 
-function Compositions() {
+function Part5() {
   return <ReactMarkdown source={content} />;
 }
 
-export default Compositions;
+export default Part5;

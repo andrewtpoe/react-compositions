@@ -11,8 +11,8 @@ const content = `
 - \`Container\` can also refer to a Block that "contains" other visual components.
 `;
 
-function Containers() {
+function Part6() {
   return <ReactMarkdown source={content} />;
 }
 
-export default Containers;
+export default Part6;

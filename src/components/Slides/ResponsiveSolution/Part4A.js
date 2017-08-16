@@ -24,8 +24,8 @@ function Part4A({ theme }) {
       >
         <SplitPane
           split="vertical"
-          minSize={75}
-          maxSize={-75}
+          minSize={100}
+          maxSize={-100}
           defaultSize={250}
           style={{
             border: `1px solid ${theme.colors.text}`,

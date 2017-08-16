@@ -2,8 +2,7 @@ import React from 'react';
 import ReactMarkdown from 'react-markdown';
 
 const content = `
-# The Responsive Problem
-## React thinks in components, browsers think in pages.
+# React thinks in components, browsers think in pages.
 
 - Most of the time this isn't a problem:
   - We define a "page" component that handles rendering the nav/ content/ form/ table/ etc... components we want on that page.

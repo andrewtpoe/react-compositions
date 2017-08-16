@@ -1,24 +1,29 @@
-# Creating and using Styled Components
+## Creating a styled component
 
-## Creating a Styled Component
-
-Styled Components has it's own API for defining components.
+Styled components has it's own API for defining components.
 
 ```js
+
+import styled from 'styled-components';
+
 const Card = styled.div`
-  border-radius: 2px;
   border: 1px solid #999999;
+  border-radius: 2px;
   box-shadow: 0 2px 2px rgba(50, 50, 50, 0.4);
 `;
+
 ```
 
 The CSS inside the template literal is extracted and turned into an CSS class, which is then applied to the `div` created when this component is rendered.
 
-## Using a Styled Component
+## Using a styled component
 
-The Styled Component defined above generates a normal React component that can be imported/ used anywhere.
+The styled component defined above generates a normal React component that can be imported/ used anywhere.
 
 ```js
+
+import Card from 'blocks/Card';
+
 function ProfileCard(props) {
   return (
     <Card>
@@ -26,4 +31,5 @@ function ProfileCard(props) {
     </Card>
   )
 }
+
 ```

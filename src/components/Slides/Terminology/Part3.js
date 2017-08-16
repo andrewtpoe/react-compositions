@@ -11,8 +11,8 @@ const content = `
   - An implementation of the Modifiers concept can be added with the [Styled Components Modifiers package](https://github.decisiv.net/Development/styled-components-modifiers).
 `;
 
-function Part2() {
+function Part3() {
   return <ReactMarkdown source={content} />;
 }
 
-export default Part2;
+export default Part3;

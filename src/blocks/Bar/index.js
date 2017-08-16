@@ -6,7 +6,6 @@ import buildStyledComponent from 'utils/buildStyledComponent';
 const styles = props => `
   background-color: ${props.theme.colors.primary};
   min-height: 2rem;
-  padding: 0.25rem;
 `;
 
 const modifierConfig = {
