@@ -2,12 +2,18 @@ import React from 'react';
 import ReactMarkdown from 'react-markdown';
 
 const content = `
-# Where can we go from here?
+# Discussion
+
+- Thoughts on BEM, components, compositions, and containers?
+- Thoughts on our new libraries?
+- What else can we build?
+- [This site's source code.](https://github.com/andrewtpoe/react-compositions)
+
 (refresh the page to start over)
 `;
 
-function TheEnd() {
+function Part1() {
   return <ReactMarkdown source={content} />;
 }
 
-export default TheEnd;
+export default Part1;

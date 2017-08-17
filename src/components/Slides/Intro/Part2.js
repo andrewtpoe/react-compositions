@@ -10,7 +10,7 @@ const content = `
 `;
 
 function Part2() {
-  return <ReactMarkdown escapeHtml source={content} />;
+  return <ReactMarkdown source={content} />;
 }
 
 export default Part2;

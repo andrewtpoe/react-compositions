@@ -1,3 +1,5 @@
+# Styled Components
+
 ## Creating a styled component
 
 Styled components has it's own API for defining components.

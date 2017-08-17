@@ -4,10 +4,11 @@ import ReactMarkdown from 'react-markdown';
 const content = `
 # Containers
 
-- A "Smart Container" is a React component that accesses application state (redux)
-  - Gathers data to be rendered by a composition.
-  - Connects and dispatches action creators from various methods.
-  - Renders a composition.
+- A "Smart Container" is a React component that connects to application state.
+  - Connects to Redux.
+  - Retrieves the data from the store.
+  - Passes the data and action dispatch functions down.
+  - Renders a composition, or wraps it if built as a Higher Order Container.
 - \`Container\` can also refer to a Block that "contains" other visual components.
 `;
 

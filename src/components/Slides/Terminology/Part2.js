@@ -10,7 +10,8 @@ const content = `
       - Observe the \`card\` Block
       - Which has a \`card__item\` Element
       - Which has a \`card__item--brand\` Modifier.
-    - Blocks and Elements can both have Modifiers.
+  - Block and Element components typically map directly to HTML elements.
+  - Blocks and Elements can both have Modifiers.
 `;
 
 function Part2() {
