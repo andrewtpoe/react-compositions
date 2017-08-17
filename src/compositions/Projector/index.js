@@ -4,9 +4,9 @@ import React, { Component } from 'react';
 import { sizes, withSize } from 'reactive-container';
 import { Column, Container, Row } from 'styled-components-reactive-grid';
 
-import FullHeightRow from 'blocks/FullHeightRow';
 
 import ControlButton from './ControlButton';
+import FullHeightRow from './FullHeightRow';
 import Slide from './Slide';
 
 const { XS, SM, MD } = sizes;

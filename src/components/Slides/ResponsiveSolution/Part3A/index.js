@@ -22,9 +22,6 @@ function Part3A({ theme }) {
       <Row>
         <ReactMarkdown source={content} />
       </Row>
-      <Row>
-        <AsyncReactMarkdown source={code} />
-      </Row>
       <Row
         style={{
           marginBottom: theme.dimensions.gapPx,
@@ -43,6 +40,9 @@ function Part3A({ theme }) {
           <ColorBySize />
           <ColorBySize />
         </SplitPane>
+      </Row>
+      <Row>
+        <AsyncReactMarkdown source={code} />
       </Row>
     </Container>
   );

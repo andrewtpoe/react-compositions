@@ -22,9 +22,6 @@ function Part4A({ theme }) {
       <Row>
         <ReactMarkdown source={content} />
       </Row>
-      <Row>
-        <AsyncReactMarkdown source={code} />
-      </Row>
       <Row
         style={{
           marginBottom: theme.dimensions.gapPx,
@@ -41,6 +38,9 @@ function Part4A({ theme }) {
           <ReactiveGrid />
           <ReactiveGrid />
         </SplitPane>
+      </Row>
+      <Row>
+        <AsyncReactMarkdown source={code} />
       </Row>
     </Container>
   );
