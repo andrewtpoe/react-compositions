@@ -5,9 +5,9 @@ import { withTheme } from 'styled-components';
 import { Container, Row } from 'styled-components-reactive-grid';
 
 import AsyncReactMarkdown from 'components/AsyncReactMarkdown';
-import DisplaySize from 'components/DisplaySize';
 
 import code from './code.md';
+import DisplaySize from './DisplaySize';
 
 const content = `
 # Reactive Container Demo

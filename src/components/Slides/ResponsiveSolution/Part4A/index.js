@@ -5,9 +5,9 @@ import { withTheme } from 'styled-components';
 import { Container, Row } from 'styled-components-reactive-grid';
 
 import AsyncReactMarkdown from 'components/AsyncReactMarkdown';
-import ReactiveGrid from 'components/ReactiveGrid';
 
 import code from './code.md';
+import ReactiveGrid from './ReactiveGrid';
 
 const content = `
 # Reactive Grid Demo
