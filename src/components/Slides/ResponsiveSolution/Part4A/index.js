@@ -5,9 +5,9 @@ import { withTheme } from 'styled-components';
 import { Container, Row } from 'styled-components-reactive-grid';
 
 import AsyncReactMarkdown from 'components/AsyncReactMarkdown';
-import ReactiveGrid from 'components/ReactiveGrid';
 
 import code from './code.md';
+import ReactiveGrid from './ReactiveGrid';
 
 const content = `
 # Reactive Grid Demo
@@ -21,9 +21,6 @@ function Part4A({ theme }) {
     <Container>
       <Row>
         <ReactMarkdown source={content} />
-      </Row>
-      <Row>
-        <AsyncReactMarkdown source={code} />
       </Row>
       <Row
         style={{
@@ -41,6 +38,9 @@ function Part4A({ theme }) {
           <ReactiveGrid />
           <ReactiveGrid />
         </SplitPane>
+      </Row>
+      <Row>
+        <AsyncReactMarkdown source={code} />
       </Row>
     </Container>
   );

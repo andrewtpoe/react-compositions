@@ -7,7 +7,6 @@ const content = `
 - Two simple-to-use Higher Order Components.
 - Makes the container's (visual component) size a prop accessible by any child component (React component).
 - With styled components modifiers, we can easily change which modifiers are applied based on prop values.
-  - This enables container based responsive design.
 - Helpers for handling responsive modifiers are baked in to \`styled-components-modifiers\`.
 `;
 

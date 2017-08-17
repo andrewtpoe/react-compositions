@@ -5,9 +5,9 @@ import { withTheme } from 'styled-components';
 import { Container, Row } from 'styled-components-reactive-grid';
 
 import AsyncReactMarkdown from 'components/AsyncReactMarkdown';
-import ColorBySize from 'components/ColorBySize';
 
 import code from './code.md';
+import ColorBySize from './ColorBySize';
 
 const content = `
 # Reactive Container + Responsive Modifiers Demo
@@ -21,9 +21,6 @@ function Part3A({ theme }) {
     <Container>
       <Row>
         <ReactMarkdown source={content} />
-      </Row>
-      <Row>
-        <AsyncReactMarkdown source={code} />
       </Row>
       <Row
         style={{
@@ -43,6 +40,9 @@ function Part3A({ theme }) {
           <ColorBySize />
           <ColorBySize />
         </SplitPane>
+      </Row>
+      <Row>
+        <AsyncReactMarkdown source={code} />
       </Row>
     </Container>
   );
