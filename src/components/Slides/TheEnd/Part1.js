@@ -7,8 +7,9 @@ const content = `
 - Thoughts on BEM, components, compositions, and containers?
 - Thoughts on our new libraries?
 - What else can we build?
+- [This site's source code.](https://github.com/andrewtpoe/react-compositions)
 
-(When you're ready, refresh the page to start over)
+(refresh the page to start over)
 `;
 
 function Part1() {
