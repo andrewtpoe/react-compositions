@@ -6,7 +6,7 @@ const content = `
 
 - A logically associated group of visual components that should always be displayed together.
   - A \`ProfileCard\` is an example of a composition.
-    - Built with Blocks, Elements, and other visual components (like \`InformationTable\`).
+    - Built with Blocks (\`Card\`), Elements (\`Card.Item\`), and other visual components (\`ProfileInformationTable\`).
 - A composition can also display a group of other compositions.
   - A \`ProfileCardGrid\` renders a group of \`ProfileCard\`s.
 `;

@@ -1,4 +1,4 @@
-import { isNaN } from 'lodash';
+import { compact, isNaN } from 'lodash';
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import { sizes, withSize } from 'reactive-container';
@@ -7,6 +7,7 @@ import { Column, Container, Row } from 'styled-components-reactive-grid';
 import FullHeightRow from 'blocks/FullHeightRow';
 
 import ControlButton from './ControlButton';
+import Slide from './Slide';
 
 const { XS, SM, MD } = sizes;
 
@@ -85,11 +86,6 @@ class Projector extends Component {
     window.removeEventListener('keydown', this.keypressEventHandler);
   }
 
-  currentSlide() {
-    const CurrentSlide = this.props.slides[this.state.slideIndex];
-    return <CurrentSlide />;
-  }
-
   handleNextClick = () => {
     window.scrollTo(0, 0);
     this.setState(next);
@@ -108,6 +104,23 @@ class Projector extends Component {
       this.setState(next);
     }
   };
+
+  slides = () => {
+    return this.props.slides.map((CurrentSlide, index) => {
+      const { slideIndex } = this.state;
+      let modifier;
+      if (index < slideIndex) {
+        modifier = 'left';
+      } else if (index > slideIndex) {
+        modifier = 'right';
+      }
+      return (
+        <Slide key={index} modifiers={compact([modifier])}>
+          <CurrentSlide />
+        </Slide>
+      )
+    })
+  }
 
   render() {
     return (
@@ -140,7 +153,7 @@ class Projector extends Component {
         >
           <Container>
             <Row modifiers={['middle']}>
-              {this.currentSlide()}
+              {this.slides()}
             </Row>
             <Row>
               <Column modifiers={['col']}>

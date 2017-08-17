@@ -4,18 +4,27 @@ import SplitPane from 'react-split-pane';
 import { withTheme } from 'styled-components';
 import { Container, Row } from 'styled-components-reactive-grid';
 
+import AsyncReactMarkdown from 'components/AsyncReactMarkdown';
 import DisplaySize from 'components/DisplaySize';
+
+import code from './code.md';
 
 const content = `
 # Reactive Container Demo
 
-- Drag the divider in the split pane above to change the size of each side.
-- Both sides render exactly the same React component.
+- Drag the divider in the split pane below to change the size of each side.
+- Both sides of the split pane render exactly the same React component.
 `;
 
 function Part2A({ theme }) {
   return (
     <Container>
+      <Row>
+        <ReactMarkdown source={content} />
+      </Row>
+      <Row>
+        <AsyncReactMarkdown source={code} />
+      </Row>
       <Row
         style={{
           marginBottom: theme.dimensions.gapPx,
@@ -34,9 +43,6 @@ function Part2A({ theme }) {
           <DisplaySize />
           <DisplaySize />
         </SplitPane>
-      </Row>
-      <Row>
-        <ReactMarkdown escapeHtml source={content} />
       </Row>
     </Container>
   );

@@ -4,18 +4,27 @@ import SplitPane from 'react-split-pane';
 import { withTheme } from 'styled-components';
 import { Container, Row } from 'styled-components-reactive-grid';
 
+import AsyncReactMarkdown from 'components/AsyncReactMarkdown';
 import ReactiveGrid from 'components/ReactiveGrid';
+
+import code from './code.md';
 
 const content = `
 # Reactive Grid Demo
 
-- Drag the divider in the split pane above to change the size of each side.
-- Both sides render exactly the same React component.
+- Drag the divider in the split pane below to change the size of each side.
+- Both sides of the split pane render exactly the same React component.
 `;
 
 function Part4A({ theme }) {
   return (
     <Container>
+      <Row>
+        <ReactMarkdown source={content} />
+      </Row>
+      <Row>
+        <AsyncReactMarkdown source={code} />
+      </Row>
       <Row
         style={{
           marginBottom: theme.dimensions.gapPx,
@@ -24,19 +33,14 @@ function Part4A({ theme }) {
       >
         <SplitPane
           split="vertical"
-          minSize={100}
-          maxSize={-100}
+          minSize={125}
+          maxSize={-125}
           defaultSize={250}
-          style={{
-            border: `1px solid ${theme.colors.text}`,
-          }}
+          style={{ border: `1px solid ${theme.colors.text}` }}
         >
           <ReactiveGrid />
           <ReactiveGrid />
         </SplitPane>
-      </Row>
-      <Row>
-        <ReactMarkdown escapeHtml source={content} />
       </Row>
     </Container>
   );

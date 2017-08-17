@@ -4,8 +4,7 @@ import ReactMarkdown from 'react-markdown';
 const content = `
 # How useful is this really?
 
-- We can break the "pages" mindset (we are already pretty good about this).
-- Design and build Responsive Compositions instead.
+- Design and build Responsive Compositions instead of full pages.
   - Compositions can now be designed and built independently of the page.
   - Compositions can now be designed with their own responsive breakpoints.
   - A well crafted Composition can be placed anywhere within the app, and it "just works". No styling issues, no state issues.

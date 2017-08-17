@@ -13,7 +13,7 @@ const BREAKPOINTS = [
   { name: XL, minWidth: 375 },
 ];
 
-function DisplaySize() {
+function ColorBySize() {
   return (
     <ReactiveContainer breakpoints={BREAKPOINTS}>
       <Bar
@@ -28,4 +28,4 @@ function DisplaySize() {
   );
 }
 
-export default DisplaySize;
+export default ColorBySize;

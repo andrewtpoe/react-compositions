@@ -1,20 +1,4 @@
-import React from 'react';
-import { sizes } from 'reactive-container';
-import {
-  Column,
-  ReactiveContainer,
-  Row,
-} from 'styled-components-reactive-grid';
-
-import Bar from 'blocks/Bar';
-
-const { XS, SM, MD, LG } = sizes;
-
-const BREAKPOINTS = [
-  { name: SM, minWidth: 250 },
-  { name: MD, minWidth: 350 },
-  { name: LG, minWidth: 450 },
-];
+```js
 
 function ReactiveGrid() {
   return (
@@ -99,4 +83,4 @@ function ReactiveGrid() {
   );
 }
 
-export default ReactiveGrid;
+```

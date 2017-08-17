@@ -8,7 +8,8 @@ const content = `
     - Blocks are the default export of a folder: \`Card\`
     - Elements are properties of a Block component: \`Card.Item\`
     - **VERY IMPORTANT:** Blocks and Elements are *ALWAYS* stateless, functional, and display only.
-  - An implementation of the Modifiers concept can be added with the [Styled Components Modifiers package](https://github.decisiv.net/Development/styled-components-modifiers).
+  - Introducing [Styled Components Modifiers](https://github.decisiv.net/Development/styled-components-modifiers).
+    - Adds an implementation of BEM flavored modifiers to Styled Components.
 `;
 
 function Part3() {
